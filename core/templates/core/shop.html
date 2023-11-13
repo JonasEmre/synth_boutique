@@ -1,0 +1,24 @@
+{% extends 'core/base.html' %} {% block content %}
+<h1>Shop</h1>
+<div class="shop-section">
+  {% for item in items %}
+  <div class="card">
+    <h3 class="card-title">{{ item.name }}</h3>
+    <figure class="card-figure">
+      <img
+        class="card-image"
+        src="{{item.images.url}}"
+        alt="{{ item.name }}"
+        width="300"
+      />
+      <figcaption class="card-caption">{{ item.name }}</figcaption>
+    </figure>
+    <div class="card-body">
+      <h4 class="card-price">{{ item.price }}$</h4>
+      <p class="card-brand">{{ item.brand }}</p>
+      <p class="card-date text-muted">{{ item.date_added|date:"d F Y" }}</p>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}

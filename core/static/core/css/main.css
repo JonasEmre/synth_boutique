@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,500;0,600;0,700;0,1000;1,400;1,800&family=Roboto:wght@300;400;700&display=swap");
+
+/* Reset and Root variables */
+* {
+  font-family: Nunito, sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --bg-primary: #333;
+  --link-light: #f5f5f5;
+
+  --padding: 1rem;
+  --padding-gr: 0.618rem;
+  --margin-std: 1rem;
+}
+
+/* Navbar */
+
+.navbar {
+  background-color: var(--bg-primary);
+  padding: var(--padding-gr);
+}
+
+.navbar-nav {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.nav-item {
+  width: 100%;
+}
+
+.navbar-item:last-child {
+  margin-left: auto;
+}
+
+.nav-link {
+  color: var(--link-light);
+  text-decoration: none;
+  font-weight: bold;
+  padding: var(--padding);
+}
+
+.navbar-brand {
+  font-size: 1.618rem;
+}
+
+/* Shop Card Sections */
+.shop-section {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card {
+  display: flex;
+  flex-flow: column wrap;
+  flex-grow: 1;
+  padding: var(--padding);
+  border: 1px solid #333;
+  width: min(500px, 100%);
+  margin: var(--margin-std);
+}
+
+.card-title {
+  font-size: 2rem;
+  font-weight: 700;
+  padding: var(--padding-gr);
+  text-align: center;
+}
+
+.card-figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-caption {
+  margin-top: var(--padding-gr);
+}
+
+.card-image {
+  border: 1px double var(--bg-primary);
+  width: min(720px, 100%);
+  height: auto;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-price {
+  font-size: 3rem;
+  font-weight: 300;
+}
+
+.card-brand {
+  font-size: 1.2rem;
+  font-style: italic;
+}
+
+.card-date {
+  text-align: end;
+}
+
+/* Utils */
+.text-muted {
+  opacity: 0.7; /* Adjust the opacity to make it faded */
+}
+
+/* Footer */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--padding-gr);
+  background-color: var(--bg-primary);
+  color: var(--link-light);
+}
