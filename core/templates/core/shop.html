@@ -1,24 +1,49 @@
 {% extends 'core/base.html' %} {% block content %}
-<h1>Shop</h1>
+<h1 class="text-center">Shop</h1>
 <div class="shop-section">
   {% for item in items %}
   <div class="card">
-    <h3 class="card-title">{{ item.name }}</h3>
+    <a class="td-none" href="{% url 'product-detail' item.id %}">
+      <h3 class="card-title">{{ item.name }}</h3>
+    </a>
     <figure class="card-figure">
-      <img
-        class="card-image"
-        src="{{item.images.url}}"
-        alt="{{ item.name }}"
-        width="300"
-      />
+      <a href="{% url 'product-detail' item.id %}">
+        <img
+          class="card-image"
+          src="{{item.images.url}}"
+          alt="{{ item.name }}"
+          width="300"
+        />
+      </a>
       <figcaption class="card-caption">{{ item.name }}</figcaption>
     </figure>
     <div class="card-body">
-      <h4 class="card-price">{{ item.price }}$</h4>
+      <h4 class="text-xl text-bold">{{ item.price }}$</h4>
       <p class="card-brand">{{ item.brand }}</p>
       <p class="card-date text-muted">{{ item.date_added|date:"d F Y" }}</p>
     </div>
   </div>
   {% endfor %}
+</div>
+
+<!-- Paginator Logic -->
+<div class="paginator">
+  {% if is_paginated %} {% if page_obj.has_previous %}
+  <a
+    class="bg-dark border-1 td-none pd-gr"
+    href="{% url 'shop' %}?page={{ page_obj.previous_page_number }}"
+    >Previous</a
+  >
+  {% endif %}
+  <a href="{% url 'shop' %}?page={{ page_obj.number }}">
+    <span class="bg-dark border-1 td-none pd-gr"> {{ page_obj.number }} </span>
+  </a>
+  {% if page_obj.has_next %}
+  <a
+    class="bg-dark border-1 td-none pd-gr"
+    href="{% url 'shop' %}?page={{ page_obj.next_page_number }}"
+    >Next</a
+  >
+  {% endif %} {% endif %}
 </div>
 {% endblock %}

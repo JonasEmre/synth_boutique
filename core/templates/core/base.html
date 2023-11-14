@@ -10,15 +10,20 @@
     <link rel="stylesheet" href="{% static 'core/css/main.css' %}" />
 
     <!-- Icon -->
-    <link rel="icon" href="{% static 'core/icons/synth_boutique-favicon.svg' %}" type="image/svg+xml">
-
+    <link
+      rel="icon"
+      href="{% static 'core/icons/synth_boutique-favicon.svg' %}"
+      type="image/svg+xml"
+    />
   </head>
   <body>
     <header>
       <nav class="navbar">
         <ul class="navbar-nav">
           <li class="navbar-item">
-            <a href="{% url 'home' %}" class="nav-link navbar-brand">Synth Boutique</a>
+            <a href="{% url 'home' %}" class="nav-link navbar-brand"
+              >Synth Boutique</a
+            >
           </li>
           <li class="navbar-item">
             <a href="#" class="nav-link">Home</a>
@@ -36,7 +41,7 @@
       </nav>
     </header>
 
-    <main>{% block content %} {% endblock %}</main>
+    <main>{% block content %}{% endblock %}</main>
 
     <footer class="footer">
       <p>Synth Boutique Co.</p>
